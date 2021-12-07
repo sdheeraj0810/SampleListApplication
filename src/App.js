@@ -10,14 +10,14 @@ export default function App() {
   }
 
   const [searchText, setSearchText] = useState("");
-  const [items, setItems] = useState([]);
+  const [items, setItemsData] = useState([]);
   const [error, setError] = useState(null);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((res) => res.json())
       .then(
         (result) => {
-          setItems(result);
+          setItemsData(result);
         },
         (error) => {
           setError(error);
